@@ -143,11 +143,11 @@ import org.junit.jupiter.api.Test;
         assertEquals(1, students.size(), "Student should be saved in the list");
         arrayClass savedStudent = students.get(0);
 
-        assertEquals(id, savedStudent.getId(), "Student ID should match");
-        assertEquals(name, savedStudent.getName(), "Student name should match");
-        assertEquals(age, savedStudent.getAge(), "Student age should match");
-        assertEquals(email, savedStudent.getEmail(), "Student email should match");
-        assertEquals(course, savedStudent.getCourse(), "Student course should match");
+        assertEquals(id, savedStudent.getId(), "ID should match");
+        assertEquals(name, savedStudent.getName(), "Name should match");
+        assertEquals(age, savedStudent.getAge(), "Age should match");
+        assertEquals(email, savedStudent.getEmail(), "Email should match");
+        assertEquals(course, savedStudent.getCourse(), "Course should match");
     }
     
      @Test
@@ -163,27 +163,27 @@ import org.junit.jupiter.api.Test;
     @Test
     void testStudentAge_StudentAgeInvalid() 
     {
-        Scanner in = new Scanner("15\n");
+        Scanner in = new Scanner("11\n");
 
         boolean isValid = validateStudentAge(in);
 
-        assertFalse(isValid, "The student's age should be invalid as it is less than 16.");
+        assertFalse(isValid, "The student's age should be invalid.");
     }
 
     @Test
     void testStudentAge_StudentAgeInvalidCharacter()
     {
-        Scanner in = new Scanner("abc\n");
+        Scanner in = new Scanner("asdasdasdasdasd\n");
         boolean isValid = validateStudentAge(in);
 
-        assertFalse(isValid, "The input should be invalid as it is not a number.");
+        assertFalse(isValid, "The input should be invalid.");
     }
 
     private boolean validateStudentAge(Scanner in) 
     {
         while (true) 
         {
-            System.out.println("Enter the student age: ");
+            System.out.println("Enter the students age: ");
             if (in.hasNextInt()) 
             {
                 int age = in.nextInt();
