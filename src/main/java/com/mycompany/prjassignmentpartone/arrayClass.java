@@ -8,7 +8,7 @@ package com.mycompany.prjassignmentpartone;
  *
  * @author matth
  */
-public class newStudent 
+public class arrayClass 
 {
     private String id;
     private String name;
@@ -17,7 +17,7 @@ public class newStudent
     private String course;
 
     
-    public newStudent(String id, String name, int age, String email, String course)
+    public arrayClass(String id, String name, int age, String email, String course)
     {
         this.id = id;
         this.name = name;
@@ -63,7 +63,7 @@ public class newStudent
                 "Enter the student course: " + course + "\n"; 
     }
 
-    void add(newStudent newStudent) {
+    void add(arrayClass newStudent) {
     }
     
     

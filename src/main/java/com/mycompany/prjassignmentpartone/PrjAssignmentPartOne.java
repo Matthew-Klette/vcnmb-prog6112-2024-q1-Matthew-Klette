@@ -13,11 +13,11 @@ import java.util.ArrayList;
  * @author matth
  */
 public class PrjAssignmentPartOne {
-    public static ArrayList<newStudent> students = new ArrayList<>();
+    public static ArrayList<arrayClass> students = new ArrayList<>();
 
     public static void main(String[] args)
     {
-    methodsClass ca = new methodsClass();
+    Student ca = new Student();
      Scanner input = new Scanner (System.in);
    
       ca.start();

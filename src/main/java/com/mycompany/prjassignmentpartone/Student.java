@@ -11,8 +11,8 @@ import java.util.Scanner;
  *
  * @author matth
  */
-public class methodsClass {
-      public static ArrayList<newStudent> students = new ArrayList<>();
+public class Student {
+      public static ArrayList<arrayClass> students = new ArrayList<>();
 
     public void start()
     {
@@ -107,7 +107,7 @@ while (true)
             System.out.println("Enter the student course: ");
             String course = in.nextLine();
             
-          newStudent newStudent = new newStudent(id, name, age, email, course);
+          arrayClass newStudent = new arrayClass(id, name, age, email, course);
           students.add(newStudent);
           
             System.out.println("Student details succesfully captured. \n");
@@ -137,7 +137,7 @@ while (true)
             String id = in.nextLine();
             
             boolean found = false;
-            for (newStudent student :students)
+            for (arrayClass student :students)
             {
                 if (student.getId().equals(id))
                 {
@@ -172,7 +172,7 @@ while (true)
         String id = in.nextLine();
 
         boolean found = false;
-        newStudent studentToDelete = null;
+        arrayClass studentToDelete = null;
 
        
         for (int i = 0; i < students.size(); i++) 
@@ -231,7 +231,7 @@ while (true)
         {
             System.out.println("STUDENT REPORT");
             System.out.println("********************************************");
-            for (newStudent student : students) {
+            for (arrayClass student : students) {
                 System.out.println(student);
             }
         }
