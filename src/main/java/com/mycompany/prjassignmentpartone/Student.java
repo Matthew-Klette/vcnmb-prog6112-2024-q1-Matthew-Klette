@@ -12,8 +12,17 @@ import java.util.Scanner;
  * @author matth
  */
 public class Student {
-      public static ArrayList<arrayClass> students = new ArrayList<>();
+        public static ArrayList<arrayClass> students = new ArrayList<>();
 
+    public void saveStudent(String id, String name, int age, String email, String course) 
+    {
+        arrayClass newStudent = new arrayClass(id, name, age, email, course);
+        students.add(newStudent);
+        System.out.println("Student details successfully captured.");
+    }
+    
+    
+    
     public void start()
     {
         Scanner in = new Scanner(System.in);
@@ -255,7 +264,6 @@ while (true)
         {
             System.exit(0);
         }
+        
 }
-
-  
 
