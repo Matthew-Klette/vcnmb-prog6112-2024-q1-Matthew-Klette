@@ -38,7 +38,7 @@ public class methodsClass {
             switch(select)
             {
                 case "1":
-                    newStudent(in);
+                    saveStudent(in);
                     break;
                 case "2":
                     searchStudent(in);
@@ -47,10 +47,10 @@ public class methodsClass {
                     deleteStudent(in);
                     break;
                  case "4":
-                    //
+                   studentReport();
                     break;
                  case "5":
-                   System.exit(0);
+                    exitStudentApplication();
                     break;
                  default:
                        System.out.println("Invalid option");
@@ -58,12 +58,12 @@ public class methodsClass {
         }
            else
         {
-            System.exit(0);
+              exitStudentApplication();
         }
     }            
               
                 
-        public void newStudent(Scanner in)
+        public void saveStudent(Scanner in)
    
         {
              
@@ -124,7 +124,7 @@ while (true)
         }
            else
         {
-            System.exit(0);
+             exitStudentApplication();
         }
       
         }
@@ -160,7 +160,7 @@ while (true)
             }
             else
             {
-                System.exit(0);
+           exitStudentApplication();
             }
         }
         
@@ -215,9 +215,46 @@ while (true)
         }
         else 
        {
-            System.exit(0);
+            exitStudentApplication();
         }
     }
+   
+   
+   public void studentReport() 
+   {
+        if (students.isEmpty()) 
+        {
+            System.out.println("No students available.");
+        } 
+        else 
+        {
+            System.out.println("STUDENT REPORT");
+            System.out.println("********************************************");
+            for (newStudent student : students) {
+                System.out.println(student);
+            }
+        }
+
+        System.out.println("Enter (1) to launch menu or any other key to exit");
+        Scanner in = new Scanner(System.in);
+        String select = in.nextLine();
+
+        if (select.equals("1")) 
+        {
+            start();
+        } 
+        else 
+        {
+          exitStudentApplication();
+        }
+   }
+   
+   
+        public void exitStudentApplication()
+        {
+            System.exit(0);
+        }
+}
 
   
-}
+
