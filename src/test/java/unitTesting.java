@@ -33,7 +33,7 @@ import org.junit.jupiter.api.Test;
     }
 
     @Test
-    void testSearchStudent() 
+    void testSearchStudent() //Checks to see if a student can be searched for
     {
         studentManager.saveStudent(existingStudentId, "Matt", 20, "matt@gmail.com", "PROG5122");
         
@@ -49,16 +49,16 @@ import org.junit.jupiter.api.Test;
                 break;
             }
         }
-        assertNotNull(foundStudent, "Student should be found in the list");
-        assertEquals(id, foundStudent.getId(), "Student ID should match");
-        assertEquals("Matt", foundStudent.getName(), "Student name should match");
-        assertEquals(20, foundStudent.getAge(), "Student age should match");
-        assertEquals("matt@gmail.com", foundStudent.getEmail(), "Student email should match");
-        assertEquals("PROG5122", foundStudent.getCourse(), "Student course should match");
+        assertNotNull(foundStudent, "Student found");
+        assertEquals(id, foundStudent.getId(), "Student ID found");
+        assertEquals("Matt", foundStudent.getName(), "Student name found");
+        assertEquals(20, foundStudent.getAge(), "Student age found");
+        assertEquals("matt@gmail.com", foundStudent.getEmail(), "Student email found");
+        assertEquals("PROG5122", foundStudent.getCourse(), "Student course found");
     }
 
     @Test
-    void testSearchStudent_StudentNotFound() 
+    void testSearchStudent_StudentNotFound() //Checks to see if a student will not be found
     {
         String id = nonExistingStudentId;
         ArrayList<arrayClass> students = Student.students;
@@ -73,11 +73,11 @@ import org.junit.jupiter.api.Test;
             }
         }
         
-        assertNull(foundStudent, "No student should be found in the list");
+        assertNull(foundStudent, "No student found");
     }
 
     @Test
-    void testDeleteStudent() 
+    void testDeleteStudent() //Checks to see if a student can be deleted
     {
         studentManager.saveStudent(existingStudentId, "Matt", 20, "matt@gmail.com", "PROG5122");
         
@@ -99,11 +99,11 @@ import org.junit.jupiter.api.Test;
             students.remove(studentToDelete);
         }
 
-        assertEquals(0, students.size(), "Student should be removed from the list");
+        assertEquals(0, students.size(), "Student deleted");
     }
 
     @Test
-    void testDeleteStudent_StudentNotFound() 
+    void testDeleteStudent_StudentNotFound() //Checks to see if a student has been deleted
     {
         studentManager.saveStudent(existingStudentId, "Matt", 20, "matt@gmail.com", "PROG5122");
 
@@ -125,11 +125,11 @@ import org.junit.jupiter.api.Test;
             students.remove(studentToDelete);
         }
 
-        assertEquals(1, students.size(), "No student should be removed from the list");
+        assertEquals(1, students.size(), "No student found");
     }
     
     @Test
-    public void testSaveStudent() 
+    public void testSaveStudent() //cHECKS for correct student details
     {
         String id = "ST10249706";
         String name = "Matt";
@@ -143,40 +143,40 @@ import org.junit.jupiter.api.Test;
         assertEquals(1, students.size(), "Student should be saved in the list");
         arrayClass savedStudent = students.get(0);
 
-        assertEquals(id, savedStudent.getId(), "ID should match");
-        assertEquals(name, savedStudent.getName(), "Name should match");
-        assertEquals(age, savedStudent.getAge(), "Age should match");
-        assertEquals(email, savedStudent.getEmail(), "Email should match");
-        assertEquals(course, savedStudent.getCourse(), "Course should match");
+        assertEquals(id, savedStudent.getId(), "Valid");
+        assertEquals(name, savedStudent.getName(), "Valid");
+        assertEquals(age, savedStudent.getAge(), "Valid");
+        assertEquals(email, savedStudent.getEmail(), "Valid");
+        assertEquals(course, savedStudent.getCourse(), "Valid");
     }
     
      @Test
-    void testStudentAge_StudentAgeValid()
+    void testStudentAge_StudentAgeValid()//Checks for a valid student age
     {
         Scanner in = new Scanner("20\n");
 
         boolean isValid = validateStudentAge(in);
 
-        assertTrue(isValid, "The student's age should be valid.");
+        assertTrue(isValid, "Valid.");
     }
 
     @Test
-    void testStudentAge_StudentAgeInvalid() 
+    void testStudentAge_StudentAgeInvalid() //cHECKS FOR AN INVALID STUDENT AGE
     {
         Scanner in = new Scanner("11\n");
 
         boolean isValid = validateStudentAge(in);
 
-        assertFalse(isValid, "The student's age should be invalid.");
+        assertFalse(isValid, "Invalid.");
     }
 
     @Test
-    void testStudentAge_StudentAgeInvalidCharacter()
+    void testStudentAge_StudentAgeInvalidCharacter()//Checks if the student age is not a numerical value
     {
         Scanner in = new Scanner("asdasdasdasdasd\n");
         boolean isValid = validateStudentAge(in);
 
-        assertFalse(isValid, "The input should be invalid.");
+        assertFalse(isValid, "Invalid.");
     }
 
     private boolean validateStudentAge(Scanner in) 

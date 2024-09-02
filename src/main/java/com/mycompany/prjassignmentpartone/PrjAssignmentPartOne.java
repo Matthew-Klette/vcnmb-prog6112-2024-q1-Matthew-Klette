@@ -13,14 +13,14 @@ import java.util.ArrayList;
  * @author matth
  */
 public class PrjAssignmentPartOne {
-    public static ArrayList<arrayClass> students = new ArrayList<>();
+    public static ArrayList<arrayClass> students = new ArrayList<>(); //Defines an array list to hold the instances of the array class
 
     public static void main(String[] args)
     {
-    Student ca = new Student();
+    Student ca = new Student();//Creates student class instance
      Scanner input = new Scanner (System.in);
    
-      ca.start();
+      ca.start(); //Calls the start method
     }
     
 }

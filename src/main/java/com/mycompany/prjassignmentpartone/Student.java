@@ -14,10 +14,10 @@ import java.util.Scanner;
 public class Student {
         public static ArrayList<arrayClass> students = new ArrayList<>();
 
-    public void saveStudent(String id, String name, int age, String email, String course) 
+    public void saveStudent(String id, String name, int age, String email, String course) //Method to save the student details
     {
-        arrayClass newStudent = new arrayClass(id, name, age, email, course);
-        students.add(newStudent);
+        arrayClass newStudent = new arrayClass(id, name, age, email, course);//Creates a new instance of arrayclass
+        students.add(newStudent);//Adds new student object to the array list
         System.out.println("Student details successfully captured.");
     }
     
@@ -47,22 +47,22 @@ public class Student {
             switch(select)
             {
                 case "1":
-                    saveStudent(in);
+                    saveStudent(in);//Calls save student method if 1 is entered
                     break;
                 case "2":
-                    searchStudent(in);
+                    searchStudent(in); //calls search student method if 2 is entered
                     break;
                 case "3":
-                    deleteStudent(in);
+                    deleteStudent(in); //calls delete student method if 3 is entered
                     break;
                  case "4":
-                   studentReport();
+                   studentReport(); //calls student report method if 4 is entered
                     break;
                  case "5":
-                    exitStudentApplication();
+                    exitStudentApplication(); //closes the program if 5 is entered
                     break;
                  default:
-                       System.out.println("Invalid option");
+                       System.out.println("Invalid option"); //Prints error if any other character is entered
             }
         }
            else
@@ -73,18 +73,18 @@ public class Student {
               
     
                 
-        public void saveStudent(Scanner in)
+        public void saveStudent(Scanner in) //Save student method
    
         {
              
-            System.out.println("Enter a student id: ");
+            System.out.println("Enter a student id: ");//Prompts for student id
             String id = in.nextLine();
             
-            System.out.println( "Enter the student name: " );
+            System.out.println( "Enter the student name: " ); //Prompts for student name
             String name = in.nextLine();
             
-          int age;
-while (true) 
+          int age;//Sets age to only a numerical value
+while (true) //Error checking for age
 {
     System.out.println("Enter the student age: ");
     if (in.hasNextInt()) 
@@ -92,7 +92,7 @@ while (true)
         age = in.nextInt();
         in.nextLine();
 
-        if (age >= 16) 
+        if (age >= 16) //Checks if the age is below 16
         {
             break;
         } 
@@ -106,24 +106,24 @@ while (true)
     {
             System.out.println("You have entered an incorrect student age!!!");
           
-        in.nextLine(); 
+        in.nextLine(); //reprompts
     }
 }
             
-            System.out.println("Enter the student email: ");
+            System.out.println("Enter the student email: ");//prompts for student email
             String email = in.nextLine();
             
-            System.out.println("Enter the student course: ");
+            System.out.println("Enter the student course: ");//prompts for student course
             String course = in.nextLine();
             
           arrayClass newStudent = new arrayClass(id, name, age, email, course);
-          students.add(newStudent);
+          students.add(newStudent);//adds student details to the array list
           
             System.out.println("Student details succesfully captured. \n");
           
             System.out.println("CAPTURE A NEW STUDENT");
             System.out.println("********************************************");
-            System.out.println(newStudent);
+            System.out.println(newStudent);//displays the captured details
             System.out.println("Enter (1) to launch menu or any other key to exit");
            String select = in.nextLine();
 
@@ -140,13 +140,13 @@ while (true)
         }
         
         
-        public void searchStudent(Scanner in)
+        public void searchStudent(Scanner in)//method to search for student
         {
             System.out.println("Enter a student ID to search.");
             String id = in.nextLine();
             
             boolean found = false;
-            for (arrayClass student :students)
+            for (arrayClass student :students) //if ID matches a student ID in the array, details of the student are displayed
             {
                 if (student.getId().equals(id))
                 {
@@ -159,7 +159,7 @@ while (true)
             }
             if (!found)
             {
-                System.out.println("No students found with ID number: " + id);
+                System.out.println("No students found with ID number: " + id);//Display message if student is not found
             }
             System.out.println("Enter (1) to launch menu or any other key to exit");
             String select = in.nextLine();
@@ -175,13 +175,13 @@ while (true)
         }
         
         
-   public void deleteStudent(Scanner in) 
+   public void deleteStudent(Scanner in) //Method to delete student
    {
         System.out.println("Enter a student ID to delete.");
         String id = in.nextLine();
 
         boolean found = false;
-        arrayClass studentToDelete = null;
+        arrayClass studentToDelete = null;//Searches for ID in the array list to delete
 
        
         for (int i = 0; i < students.size(); i++) 
@@ -199,7 +199,7 @@ while (true)
          
             System.out.println("Enter the student id to delete: " + studentToDelete);
             System.out.println("Are you sure you want to delete student from the system? Yes (y) to delete.");
-            String confirmation = in.nextLine().trim().toLowerCase();
+            String confirmation = in.nextLine().trim().toLowerCase();//Confirmation to delete a student
 
             if (confirmation.equals("y")) 
             {
@@ -213,7 +213,7 @@ while (true)
         } 
         else 
         {
-            System.out.println("No students found with ID number: " + id);
+            System.out.println("No students found with ID number: " + id);//Display message if no student was found
         }
 
         System.out.println("Enter (1) to launch menu or any other key to exit");
@@ -230,9 +230,9 @@ while (true)
     }
    
    
-   public void studentReport() 
+   public void studentReport() //method for student report
    {
-        if (students.isEmpty()) 
+        if (students.isEmpty()) //if no students are in the array, a display message appears
         {
             System.out.println("No students available.");
         } 
@@ -240,7 +240,7 @@ while (true)
         {
             System.out.println("STUDENT REPORT");
             System.out.println("********************************************");
-            for (arrayClass student : students) {
+            for (arrayClass student : students) {//displays students saved in the array in chronological order
                 System.out.println(student);
             }
         }
@@ -260,7 +260,7 @@ while (true)
    }
    
    
-        public void exitStudentApplication()
+        public void exitStudentApplication()//method to close the program
         {
             System.exit(0);
         }
