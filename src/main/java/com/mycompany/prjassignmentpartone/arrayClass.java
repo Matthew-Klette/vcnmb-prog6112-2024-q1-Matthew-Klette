@@ -63,6 +63,31 @@ public class arrayClass
                 "Enter the student course: " + course + "\n"; 
     }
 
+    public void setId(String id)
+    {
+        this.id = id;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public void setCourse(String course)
+    {
+        this.course = course;
+    }
+
     void add(arrayClass newStudent) {
     }
     
