@@ -8,7 +8,7 @@ package com.mycompany.prjassignmentpartone;
  *
  * @author matth
  */
-public class arrayClass 
+public class arrayClass //(Farrel, J. 2019)
 {
     private String id;
     private String name;
@@ -17,7 +17,7 @@ public class arrayClass
     private String course;
 
     
-    public arrayClass(String id, String name, int age, String email, String course)
+    public arrayClass(String id, String name, int age, String email, String course) //(Farrel, J. 2019)
     {
         this.id = id;
         this.name = name;
@@ -28,32 +28,32 @@ public class arrayClass
     
     
     
-    public String getId() 
+    public String getId()  //(Farrel, J. 2019)
     {
         return id;
     }
 
-    public String getName() 
+    public String getName() //(Farrel, J. 2019)
     {
         return name;
     }
 
-    public int getAge() 
+    public int getAge() //(Farrel, J. 2019)
     {
         return age;
     }
 
-    public String getEmail() 
+    public String getEmail() //(Farrel, J. 2019)
     {
         return email;
     }
 
-    public String getCourse() 
+    public String getCourse() //(Farrel, J. 2019)
     {
         return course;
     }
     
-    @Override
+    @Override //(Farrel, J. 2019)
     public String toString()
     {
         return "Enter a student id: " + id + "\n" +
@@ -63,27 +63,27 @@ public class arrayClass
                 "Enter the student course: " + course + "\n"; 
     }
 
-    public void setId(String id)
+    public void setId(String id)//(Farrel, J. 2019)
     {
         this.id = id;
     }
 
-    public void setName(String name)
+    public void setName(String name) //(Farrel, J. 2019)
     {
         this.name = name;
     }
 
-    public void setAge(int age)
+    public void setAge(int age) //(Farrel, J. 2019)
     {
         this.age = age;
     }
 
-    public void setEmail(String email)
+    public void setEmail(String email) //(Farrel, J. 2019)
     {
         this.email = email;
     }
 
-    public void setCourse(String course)
+    public void setCourse(String course) //(Farrel, J. 2019)
     {
         this.course = course;
     }
@@ -93,3 +93,10 @@ public class arrayClass
     
     
 }
+/* Farrell, J. 2019 Java programming. 9th Edition. 2019. Course Technology. Boston, MA: Cengage Learning
+W3schools.com. (2019). Java Date and Time. [online] Available at: https://www.w3schools.com/java/java_date.asp.
+W3Schools (n.d.). Java Switch. [online] www.w3schools.com. Available at: https://www.w3schools.com/java/java_switch.asp.
+‌Nalawade, K. (2023). How to Write Unit Tests in Java. [online] freeCodeCamp.org. Available at: https://www.freecodecamp.org/news/java-unit-testing/.
+*/
+  
+

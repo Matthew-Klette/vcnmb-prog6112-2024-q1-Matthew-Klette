@@ -19,20 +19,20 @@ import org.junit.jupiter.api.Test;
 /**
  *
  * @author matth
- */public class unitTesting 
+ */public class unitTesting  //(Farrel, J. 2019)
 {
     private Student studentManager;
     private final String existingStudentId = "ST10249706";
     private final String nonExistingStudentId = "999";
     
-    @BeforeEach
+    @BeforeEach //(Nalawade, 2023)
     void setUp() 
     {
         studentManager = new Student();
         Student.students.clear(); 
     }
 
-    @Test
+    @Test //(Nalawade, 2023)
     void testSearchStudent() //Checks to see if a student can be searched for
     {
         studentManager.saveStudent(existingStudentId, "Matt", 20, "matt@gmail.com", "PROG5122");
@@ -57,7 +57,7 @@ import org.junit.jupiter.api.Test;
         assertEquals("PROG5122", foundStudent.getCourse(), "Student course found");
     }
 
-    @Test
+    @Test //(Nalawade, 2023)
     void testSearchStudent_StudentNotFound() //Checks to see if a student will not be found
     {
         String id = nonExistingStudentId;
@@ -76,7 +76,7 @@ import org.junit.jupiter.api.Test;
         assertNull(foundStudent, "No student found");
     }
 
-    @Test
+    @Test //(Nalawade, 2023)
     void testDeleteStudent() //Checks to see if a student can be deleted
     {
         studentManager.saveStudent(existingStudentId, "Matt", 20, "matt@gmail.com", "PROG5122");
@@ -102,7 +102,7 @@ import org.junit.jupiter.api.Test;
         assertEquals(0, students.size(), "Student deleted");
     }
 
-    @Test
+    @Test //(Nalawade, 2023)
     void testDeleteStudent_StudentNotFound() //Checks to see if a student has been deleted
     {
         studentManager.saveStudent(existingStudentId, "Matt", 20, "matt@gmail.com", "PROG5122");
@@ -128,7 +128,7 @@ import org.junit.jupiter.api.Test;
         assertEquals(1, students.size(), "No student found");
     }
     
-    @Test
+    @Test //(Nalawade, 2023)
     public void testSaveStudent() //cHECKS for correct student details
     {
         String id = "ST10249706";
@@ -150,7 +150,7 @@ import org.junit.jupiter.api.Test;
         assertEquals(course, savedStudent.getCourse(), "Valid");
     }
     
-     @Test
+     @Test //(Nalawade, 2023)
     void testStudentAge_StudentAgeValid()//Checks for a valid student age
     {
         Scanner in = new Scanner("20\n");
@@ -160,7 +160,7 @@ import org.junit.jupiter.api.Test;
         assertTrue(isValid, "Valid.");
     }
 
-    @Test
+    @Test //(Nalawade, 2023)
     void testStudentAge_StudentAgeInvalid() //cHECKS FOR AN INVALID STUDENT AGE
     {
         Scanner in = new Scanner("11\n");
@@ -170,7 +170,7 @@ import org.junit.jupiter.api.Test;
         assertFalse(isValid, "Invalid.");
     }
 
-    @Test
+    @Test //(Nalawade, 2023)
     void testStudentAge_StudentAgeInvalidCharacter()//Checks if the student age is not a numerical value
     {
         Scanner in = new Scanner("asdasdasdasdasd\n");
@@ -198,3 +198,11 @@ import org.junit.jupiter.api.Test;
         }
     }
 }
+
+/* Farrell, J. 2019 Java programming. 9th Edition. 2019. Course Technology. Boston, MA: Cengage Learning
+W3schools.com. (2019). Java Date and Time. [online] Available at: https://www.w3schools.com/java/java_date.asp.
+W3Schools (n.d.). Java Switch. [online] www.w3schools.com. Available at: https://www.w3schools.com/java/java_switch.asp.
+‌Nalawade, K. (2023). How to Write Unit Tests in Java. [online] freeCodeCamp.org. Available at: https://www.freecodecamp.org/news/java-unit-testing/.
+*/
+  
+

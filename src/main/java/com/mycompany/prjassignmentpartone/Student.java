@@ -14,16 +14,16 @@ import java.util.Scanner;
 public class Student
 {
 
-    public static ArrayList<arrayClass> students = new ArrayList<>();
+    public static ArrayList<arrayClass> students = new ArrayList<>();  //(Farrel, J. 2019)
 
-    public void saveStudent(String id, String name, int age, String email, String course) //Method to save the student details
+    public void saveStudent(String id, String name, int age, String email, String course) //Method to save the student details  //(Farrel, J. 2019)
     {
         arrayClass newStudent = new arrayClass(id, name, age, email, course);//Creates a new instance of arrayclass
         students.add(newStudent);//Adds new student object to the array list
         System.out.println("Student details successfully captured.");
     }
 
-    public void start()
+    public void start()  //(Farrel, J. 2019)
     {
         Scanner in = new Scanner(System.in);
         System.out.println("STUDENT MANAGEMENT APPLICATION");
@@ -44,7 +44,7 @@ public class Student
 
             select = in.nextLine();
 
-            switch (select)
+            switch (select) //(W3Schools, 2024)
             {
                 case "1":
                     saveStudent(in);//Calls save student method if 1 is entered
@@ -73,7 +73,7 @@ public class Student
         }
     }
 
-    public void saveStudent(Scanner in) //Save student method
+    public void saveStudent(Scanner in) //Save student method  //(Farrel, J. 2019)
 
     {
 
@@ -135,7 +135,7 @@ public class Student
 
     }
 
-    public void searchStudent(Scanner in)//method to search for student
+    public void searchStudent(Scanner in)//method to search for student  //(Farrel, J. 2019)
     {
         System.out.println("Enter a student ID to search.");
         String id = in.nextLine();
@@ -168,7 +168,7 @@ public class Student
         }
     }
 
-    public void updateStudent(Scanner in) //Method to update a student
+    public void updateStudent(Scanner in) //Method to update a student  //(Farrel, J. 2019)
     {
         System.out.println("Enter a student ID to update.");
         String id = in.nextLine();
@@ -239,7 +239,7 @@ public class Student
         }
     }
 
-    public void deleteStudent(Scanner in) //Method to delete student
+    public void deleteStudent(Scanner in) //Method to delete student  //(Farrel, J. 2019)
     {
         System.out.println("Enter a student ID to delete.");
         String id = in.nextLine();
@@ -289,7 +289,7 @@ public class Student
         }
     }
 
-    public void studentReport() //method for student report
+    public void studentReport() //method for student report  //(Farrel, J. 2019)
     {
         if (students.isEmpty()) //if no students are in the array, a display message appears
         {
@@ -317,9 +317,16 @@ public class Student
         }
     }
 
-    public void exitStudentApplication()//method to close the program
+    public void exitStudentApplication()//method to close the program  //(Farrel, J. 2019)
     {
         System.exit(0);
     }
 
 }
+/* Farrell, J. 2019 Java programming. 9th Edition. 2019. Course Technology. Boston, MA: Cengage Learning
+W3schools.com. (2019). Java Date and Time. [online] Available at: https://www.w3schools.com/java/java_date.asp.
+W3Schools (n.d.). Java Switch. [online] www.w3schools.com. Available at: https://www.w3schools.com/java/java_switch.asp.
+‌Nalawade, K. (2023). How to Write Unit Tests in Java. [online] freeCodeCamp.org. Available at: https://www.freecodecamp.org/news/java-unit-testing/.
+*/
+  
+
